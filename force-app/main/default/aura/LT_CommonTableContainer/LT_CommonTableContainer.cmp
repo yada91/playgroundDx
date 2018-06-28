@@ -1,0 +1,19 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonTableContainer
+  * Description : 공통 테이블 컨테이너
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 10. 12  i2max        Create
+  * ===============================================================ww
+-->
+<aura:component description="LT_CommonTableContainer">
+	<aura:attribute name="table" type="Aura.Component[]"/>
+    
+	<div class="table_container">
+		{!v.table}
+	</div>   	 
+</aura:component>

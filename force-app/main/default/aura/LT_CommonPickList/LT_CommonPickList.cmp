@@ -1,0 +1,34 @@
+<!--
+ - Created by i2max on 2017-09-19.
+ -->
+
+<aura:component extends="c:LT_CommonBase"
+                controller="LT_CommonPickList"
+                description="LT_CommonPickList">
+
+    <aura:attribute name="name" type="String" default="Select"/>
+    <aura:attribute name="label" type="String" default="Select an option"/>
+    <aura:attribute name="selectedValue" type="String" />
+    <aura:attribute name="sobjectPickListField" type="Object"/>
+    <aura:attribute name="objectAPIName" type="String"/>
+    <aura:attribute name="fieldAPIName" type="String"/>
+    <aura:attribute name="pickList" type="String[]" />
+    <aura:attribute name="required" type="Boolean"  default="false"/>
+    
+    <aura:attribute name="hasDefault" type="Boolean" default="true"/>
+    <aura:attribute name="defaultValue" type="String" default="none"/>
+
+    <!--
+    == change 시 처리하는 업무종속적인 action
+    -->
+    <aura:attribute name="change" type="Aura.Action"  />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <lightning:select name="{!v.name}" label="{!v.label}" value="{!v.selectedValue}" onchange="{!c.doChange}" required="{!v.required}" aura:id="LT_CommonPickList">
+        <aura:iteration items="{!v.pickList}" var="pick">
+            <option value="{!pick.value}" text="{!pick.label}" selected="{! pick.value == v.selectedValue ? true : false}"></option>
+        </aura:iteration>
+    </lightning:select>
+
+</aura:component>

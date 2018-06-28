@@ -1,0 +1,19 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonSvg.cmp
+  * Description : 공통 SVG 컴포넌트
+  *             : Lightning Icon Reference :https://www.lightningdesignsystem.com/icons/
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author       Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================ww
+-->
+<aura:component description="LT_CommonSvg">
+    <aura:attribute name="class" type="String" description="CSS classname for the SVG element" />
+    <aura:attribute name="xlinkHref" type="String" description="SLDS icon path. Ex: /assets/icons/utility-sprite/svg/symbols.svg#download" />
+    <aura:attribute name="aria-hidden" type="String" default="true" description="aria-hidden true or false. defaults to true" />
+</aura:component>

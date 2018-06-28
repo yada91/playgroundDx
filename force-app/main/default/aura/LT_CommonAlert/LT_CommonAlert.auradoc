@@ -1,0 +1,15 @@
+<!--
+ - Created by i2max on 2017-09-26.
+ -->
+
+<aura:documentation>
+
+	<aura:description>
+       <code>LT_CommonAlert</code>
+	</aura:description>
+
+    <aura:example name="LT_CommonAlert" ref="c:LT_CommonAlertExample" label="LT_CommonAlertController">
+
+	</aura:example>
+
+</aura:documentation>

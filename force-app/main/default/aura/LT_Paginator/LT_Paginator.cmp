@@ -1,0 +1,37 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_Paginator
+  * Description : Lightning Pagination component
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component description="LT_Paginator">
+
+		<aura:attribute name="pageNumber" type="integer"/>
+		<aura:attribute name="totalPage" type="integer"/>
+		<aura:attribute name="totalCount" type="integer"/>
+
+		<aura:registerEvent name="pagePrevious" type="c:LT_PageChangeEvt"/>
+		<aura:registerEvent name="pageNext" type="c:LT_PageChangeEvt"/>
+
+		<div class="container">
+				<div class="left">
+						<aura:if isTrue="{!v.pageNumber > 1}">
+								<lightning:buttonIcon iconName="utility:left" variant="border" onclick="{!c.firePreviousPage}"/>
+						</aura:if>
+				</div>
+				<div class="centered">{!v.totalCount} records • page {!v.pageNumber} of {!v.totalPage}</div>
+				<div class="right">
+						<aura:if isTrue="{! v.totalPage > v.pageNumber }">
+								<lightning:buttonIcon iconName="utility:right" variant="border" onclick="{!c.fireNextPage}"/>
+						</aura:if>
+				</div>
+		</div>
+
+</aura:component>

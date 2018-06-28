@@ -1,0 +1,29 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonScrollBox.cmp
+  * Description : Lightning Mobile Scroll Box
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component description="LT_CommonScrollBox">
+    <!--scroll content-->
+    <aura:attribute name="class" type="String" default="slds-scrollable_y"/>
+    <!--scroll touchstart 시 pageY-->
+    <aura:attribute name="touchStart" type="double" default="0.00" description="touch start pageY. do not set"/>
+    <!--scroll touchend 시 pageY-->
+    <aura:attribute name="touchEnd" type="double" default="0.00" description="touch end pageY. do not set"/>
+    <!--scroll 최초 scrollbox의 이벤트 발생 offset size-->
+    <aura:attribute name="scrollOffsetSize" type="double" default="0.00" description="scroll offset size. do not set"/>
+    <!--scroll content-->
+    <aura:attribute name="content" type="Aura.Component[]"  required="true" />
+
+    <div class="{!v.class}">
+            {!v.content}
+    </div> 
+</aura:component>

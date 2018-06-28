@@ -1,0 +1,12 @@
+.THIS .btn_next button {
+    min-width: 120px;
+}
+
+.THIS .input-group .lightningInput {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.THIS .slds-table_resizable-cols .slds-line-height_reset th:first-child{
+    width: 59px !important;
+}

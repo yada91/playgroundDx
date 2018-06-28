@@ -1,0 +1,57 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonTemplateCol2
+  * Description : 공통 일반 컴포넌트 페이지 Template : 2분할
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================ww
+-->
+<aura:component description="LT_CommonTemplateCol2">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="sidebar" type="Aura.Component[]" required="true"/>
+    <aura:attribute name="content" type="Aura.Component[]" required="true"/>
+    <aura:attribute name="footer" type="Aura.Component[]" />
+    <aura:attribute name="isSidebarRight" type="Boolean" default="false" />
+
+    <div class="slds-custom-layout-container">
+        <!-- ==============================================================
+        * header 영역
+        ================================================================ -->
+        {!v.header}
+        <!-- ==============================================================
+        * content 영역
+        ================================================================ -->
+        <div class="slds-grid slds-wrap slds-page-body-container">
+            <!-- ==============================================================
+            * sidebar right 영역
+            ================================================================ -->
+            <aura:if isTrue="{!v.isSidebarRight}">
+                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12 slds-page-body-content">
+                    {!v.content}
+                </div>
+                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_4-of-12 slds-page-body-sidebar right">
+                    {!v.sidebar}
+                </div>
+                <!-- ==============================================================
+                * siedbar left 영역
+                ================================================================ -->
+                <aura:set attribute="else">
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_4-of-12 slds-page-body-sidebar">
+                        {!v.sidebar}
+                    </div>
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_8-of-12 slds-page-body-content">
+                        {!v.content}
+                    </div>
+                </aura:set>
+            </aura:if>
+        </div>
+        <!-- ==============================================================
+        * footer 영역
+        ================================================================ -->
+        {!v.footer}
+    </div>
+</aura:component>

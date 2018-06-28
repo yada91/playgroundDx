@@ -1,0 +1,55 @@
+<!--
+* File Name   : LT_DataTableDetailModal
+* Description : LT_DataTableDetailModal
+* Author      : Donghu Lee
+* Modification Log
+* ===============================================================
+* Ver  Date             Author    Modificationdx
+* ===============================================================
+1.0  2018-05-18      Donghu Lee     Create
+-->
+<aura:component>
+
+    <aura:attribute name="recordId" type="Id"/>
+
+    <aura:attribute name="mode" type="String"/>
+    <aura:attribute name="name" type="String"/>
+    <aura:attribute name="sobjName" type="String"/>
+
+    <aura:registerEvent name="fetchEvent" type="c:LT_CommonEvt"/>
+    <aura:handler name="onSaveSuccess" event="force:recordSaveSuccess" action="{!c.handleSaveSuccess}"/>
+
+    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+             aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- body -->
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading_medium slds-hyphenate">
+                    <aura:if isTrue="{!v.mode=='edit'}">
+                        Edit {!v.name}
+                    </aura:if>
+                    <aura:if isTrue="{!v.mode=='view'}">
+                        View {!v.name}
+                    </aura:if>
+                </h2>
+                <lightning:buttonIcon onclick="{!c.destroyModal}" iconName="utility:close" alternativeText="Close"
+                                      class="slds-modal__close" variant="bare-inverse" size="large"/>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <aura:if isTrue="{!v.mode=='edit'}">
+                    <force:recordEdit recordId="{!v.recordId}" aura:id="edit"/>
+                </aura:if>
+                <aura:if isTrue="{!v.mode=='view'}">
+                    <force:recordView recordId="{!v.recordId}"/>
+                </aura:if>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="{!$Label.site.cancel}" onclick="{!c.destroyModal}"/>
+                <aura:if isTrue="{!v.mode=='edit'}">
+                    <lightning:button variant="brand" label="{!$Label.site.save}" onclick="{!c.doSave}"/>
+                </aura:if>
+            </div>
+        </div>
+    </section>
+    <div aura:id="overlay" class="slds-backdrop slds-backdrop--open"></div>
+</aura:component>

@@ -1,0 +1,23 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonTableUiContainer
+  * Description : 공통 테이블 컨테이너
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 10. 12  i2max        Create
+  * ===============================================================ww
+-->
+<aura:component description="LT_CommonTableUiContainer">
+    <aura:attribute name="uiList" type="Aura.Component[]"/>
+
+    <div class="ui_container">
+        <aura:iteration items="{!v.uiList}" var="row" indexVar="idx">
+            <div class="inline_ui" aura:id="{! 'inline_ui_' + idx}">
+					{!row}
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

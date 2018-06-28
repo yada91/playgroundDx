@@ -1,0 +1,143 @@
+/**
+ * Created by i2max on 2017-10-12.
+2018-01-31 Table Header 대문자로 변경 -이동후
+ */
+.THIS.table_container {
+	width: 100%;
+	/* overflow: auto; */
+}
+
+.THIS.table_container table {
+	table-layout: fixed;
+}
+.THIS.table_container .slds-table thead tr th {
+	text-transform: uppercase;
+}
+
+.THIS.table_container th,
+.THIS.table_container td {
+	padding: .5rem;
+}
+
+.THIS.table_container .slds-dropdown-trigger .slds-button {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+.THIS.table_container .slds-table tbody tr:hover,
+.THIS.table_container .slds-table tbody tr:hover th,
+.THIS.table_container .slds-table tbody tr:hover td {
+	background: #f9f9f9;
+}
+
+.THIS.table_container .slds-table tbody tr:hover th,
+.THIS.table_container .slds-table tbody tr:hover td {
+	box-shadow: none !important;
+}
+
+@media (max-width: 64em) {
+	.THIS.table_container {
+		border-top: 0;
+		border-bottom: 0;
+	}
+	.THIS.table_container .slds-table,
+	.THIS.table_container .slds-table thead,
+	.THIS.table_container .slds-table tbody,
+	.THIS.table_container .slds-table tr,
+	.THIS.table_container .slds-table th,
+	.THIS.table_container .slds-table td {
+		display: block;
+	}
+	.THIS.table_container .slds-table tr {
+		margin: 10px 0;
+		border: 1px solid #ddd;
+		border-radius: 8px;
+	}
+	.THIS.table_container .slds-table tr:nth-child(2n+1) {
+		/* background-color: #eee; */
+	}
+	.THIS.table_container .slds-table thead tr {
+		position: absolute;
+		left: -9999px;
+		top: -9999px;
+	}
+	.THIS.table_container .slds-table tbody td {
+		position: relative;
+		padding-left: .5rem;
+		padding-right: .5rem;
+		border-top: 0;
+		border-bottom: 1px solid #eee;
+		color: #777;
+	}
+	.THIS.table_container .slds-table tbody td .slds-dropdown-trigger {
+		width: 100%;
+		text-align: right;
+	}
+	.THIS.table_container .slds-table tbody td:last-child {
+		border-bottom: 0;
+	}
+	.THIS.table_container .slds-table tbody td:before {
+		content: attr(data-label);
+		display: block;;
+		width: 100%;
+		font-weight: bold;
+		margin-bottom: 5px;
+		color: #333;
+	}
+	.THIS.table_container .slds-table tbody tr:hover,
+	.THIS.table_container .slds-table tbody tr:hover th,
+	.THIS.table_container .slds-table tbody tr:hover td {
+		background: #fff;
+	}
+	.THIS.table_container .slds-table tbody tr th:hover,
+	.THIS.table_container .slds-table tbody tr td:hover {
+		background: #f9f9f9;
+	}
+}
+
+/* @media (max-width: 64em) {
+	.THIS.table_container .slds-table {
+		display: block;
+		border-bottom: 0;
+	}
+	.THIS.table_container .slds-table thead {
+		display: block;
+		float: left;
+	}
+	.THIS.table_container .slds-table thead tr,
+	.THIS.table_container .slds-table thead th {
+		display: block;
+		height: 36px;
+		border-top: 1px solid #ddd !important;
+	}
+	
+	.THIS.table_container .slds-table thead tr,
+	.THIS.table_container .slds-table thead tr th:first-child {
+		border-top: 0 !important;
+	}
+	
+	.THIS.table_container .slds-table thead th + th {
+		border-top: 0;
+	}
+	.THIS.table_container .slds-table tbody {
+		display: block;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		width: auto;
+		white-space: nowrap;
+	}
+	.THIS.table_container .slds-table tbody tr {
+		display: inline-block;
+		border-right: 1px solid #ddd;
+	}	
+	.THIS.table_container .slds-table tbody td {
+		display: block;
+		height: 36px;
+	}
+	.THIS.table_container .slds-table tbody tr td:first-child {
+		border-top: 0 !important;
+	}	
+	.THIS.table_container .slds-table tbody td:last-child {
+		border-bottom-width: 1px;
+	}
+} */

@@ -1,0 +1,75 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonModalTemplate
+  * Description : 공통 ModalPopup Template
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component description="LT_CommonModalTemplate">
+    <!-- ==============================================================
+	* force:input 을 사용하기 위해서는 component 상단에 무조건 포함
+	================================================================ -->
+    <c:LT_CommonForceInput />
+
+    <!--템플릿 헤더-->
+    <aura:attribute name="tmplHeader" type="String" default="Header" />
+    <!--템플릿 속성-->
+    <aura:attribute name="tmplAttributes" type="Map" default="{}" />
+    <!--Close 시 추가 Action-->
+    <aura:attribute name="onCloseAction" type="Aura.Action"/>
+    <!--Head Component-->
+    <aura:attribute name="header"  type="Aura.Component[]">
+        <h2 class="slds-text-heading--medium" id="modalTitle">
+				{!v.tmplHeader}
+        </h2>
+        <lightning:buttonIcon onclick="{!c.onRemoveComponent}" iconName="utility:close"
+                              alternativeText="Close"
+                              class="slds-modal__close" variant="bare-inverse" size="large"/>
+    </aura:attribute>
+    <!--Content Component-->
+    <aura:attribute name="content" type="Aura.Component[]" />
+    <!--Footer Component-->
+    <aura:attribute name="footer"  type="Aura.Component[]" />
+    <aura:attribute name="closeLabel" type="String" default="Close" />
+
+
+    <!--Create a modalbox using Salesforce Lightning Desing System  -->
+    <div aura:id="modalContainer" >
+        <div role="dialog" tabindex="1" aria-labelledby="modalTitle" class="detail slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- ==============================================================
+                * Modal Header
+                ================================================================ -->
+                <div class="slds-modal__header">
+						{!v.header}
+                </div>
+                <!-- ==============================================================
+                * Modal Content
+                ================================================================ -->
+                <div class="slds-modal__content slds-p-around--medium">
+						{!v.content}
+                </div>
+                <!-- ==============================================================
+                * Modal Footer
+                ================================================================ -->
+                <div class="slds-modal__footer">
+				{!v.footer}
+                    <!-- <c:LT_WLightningButton name="closeModal"
+		                                   label="Close"
+                                           onclick="{!c.onRemoveComponent}"/> -->
+                    <lightning:button name="closeModal" label="{!v.closeLabel}" onclick="{!c.onRemoveComponent}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==============================================================
+	* modal back group 처리 div
+	================================================================ -->
+    <div class="slds-backdrop slds-backdrop--open"/>
+</aura:component>

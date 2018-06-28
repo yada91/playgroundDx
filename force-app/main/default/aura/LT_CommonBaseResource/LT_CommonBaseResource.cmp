@@ -1,0 +1,54 @@
+<!--
+  * ===============================================================
+  * File Name   : c.cmp
+  * Description : FrameWork 공통 컴포넌트
+				: 공통 사용 third party resource include
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component >
+    <aura:attribute name="beforeAction" type="Aura.Action" access="global" description="Resource 로딩이전 수행 Action"/>
+    <aura:attribute name="afterAction" type="Aura.Action" access="global" description="Resource Scripts 로딩이후 수행 Action"/>
+    <!-- ============================================================
+    * 기본 F/W의 기본 수행을 정의함 : Css, Javascript Resource 로딩 등등
+    * 모든 자원은 순서대로 로딩이 됨
+    * 멀티 자원 정의는 ',' 로 구분
+    * 보통 css부터 로딩
+    * javascritp는 dependency되는 파일부터 로딩순서를 정함
+      * 동일한 자원은 보통 한번만 로딩됨. 따라서 afterScriptsLoaded 호출 함수는 한번만 수행됨
+    * (beforeLoadingResources 호출은 매번 호출이 됨) - 유의할 것
+    * (afterScriptsLoaded ) - 유의할 것
+    * ===============================================================
+    * 필요한 third party library 를 추가하세요.
+    * jQuery 버전도 고민하여 일괄 적용하시길 바랍니다.
+    ================================================================= -->
+	<!-- SFDC Lightning에서 Performance 관련하여 미사용하더라도 컴포넌트 로딩시 third party 리소스를 로딩하기에 주석처리함 -->
+<!--    <ltng:require styles="{!join(','
+			, $Resource.jqueryCore 		+ '/jquery-ui-1.11.4.css'	)}"
+                  scripts="{!join(','
+						  , $Resource.jqueryCore 		+ '/jquery-1.11.3.js'
+						  , $Resource.jqueryCore 		+ '/jquery-ui-1.11.4.js'
+						  , $Resource.jqueryCore 		+ '/jquery.blockUI.js'	)}"
+                  beforeLoadingResources="{!c.doBeforeResourceLoaded}"
+                  afterScriptsLoaded="{!c.doAfterResourceLoaded}"
+    />-->
+    <!--
+	<ltng:require styles="{!join(','
+			, $Resource.SLDS231 		+ '/assets/styles/salesforce-lightning-design-system.css'
+			, $Resource.jqueryCore 		+ '/jquery-ui-1.11.4.css'	)}"
+					scripts="{!join(','
+			, $Resource.jqueryCore 		+ '/jquery-1.11.3.js'
+			, $Resource.jqueryCore 		+ '/jquery-ui-1.11.4.js'
+			, $Resource.jqueryCore 		+ '/jquery.blockUI.js'	)}"
+					beforeLoadingResources="{!c.doBeforeResourceLoaded}"
+					afterScriptsLoaded="{!c.doAfterResourceLoaded}"
+	/>
+-->
+    <aura:attribute name="isResourceLoaded" type="Boolean" default="false" />
+</aura:component>

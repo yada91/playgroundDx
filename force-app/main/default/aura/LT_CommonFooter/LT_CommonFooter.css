@@ -1,0 +1,46 @@
+/**
+ * Created by i2max on 2017-10-12.
+ */
+.THIS {
+    padding: 1rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.10);
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.THIS:before,
+.THIS:after {
+    content: "";
+    display: table;
+}
+
+.THIS:after {
+    clear: both;
+}
+
+.THIS .slds-page-footer-inner {
+    /* display: table;
+    width: 100%; */
+}
+
+.THIS .slds-media-module-l,
+.THIS .slds-media-module-r,
+.THIS .slds-footer-content {
+    /* display: table-cell;
+    vertical-align: middle; */
+    line-height: 34px;
+    margin: 5px 0;
+}
+
+.THIS .slds-media-module-l {
+    text-align: left;
+}
+
+.THIS .slds-media-module-r {
+    text-align: right;
+}
+
+.THIS .slds-footer-content {
+    text-align: center;
+}

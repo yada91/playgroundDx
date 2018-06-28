@@ -1,0 +1,33 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonIntf.intf
+  * Description : FrameWork 공통 Interface
+				: 모든 custom component에서 공통적으로 사용하는
+				: attribute 정의
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:interface extends="c:LT_CommonGlobalIntf" description="공통 Interface">
+    <!-- ==============================================================
+    * 임시성 데이터 처리 용도 : String
+    ================================================================ -->
+    <aura:attribute name="tempAttr" type="String" default=""/>
+    <!-- ==============================================================
+    * 요청 Label Map : 공통으로 사용하는 attribute
+    ================================================================ -->
+    <aura:attribute name="labels" type="Map" default="{}" access="public"/>
+    <!-- ==============================================================
+    * force:input lookup field에서 에러가 발생되므로 임의로 속성을 지정
+    ================================================================ -->
+    <aura:attribute name="inContextOfRecordId" type="Id"/>
+    <!-- ==============================================================
+    * force:inputField lookup field  에러가 발생되므로 임의로 속성을 지정
+    ================================================================ -->
+    <aura:attribute name="record" type="SObject"/>
+</aura:interface>

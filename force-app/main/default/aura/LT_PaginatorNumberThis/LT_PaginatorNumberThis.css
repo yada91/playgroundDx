@@ -1,0 +1,84 @@
+/**
+ * Created by ms on 2017-10-25.
+ */
+.THIS {
+    margin: 8px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.THIS .right {
+    text-align: right;
+}
+
+.THIS .centered {
+    color: #999999;
+    font-size: 0.9rem;
+    text-align: center;
+    align-self: center;
+    padding: 0 12px;
+}
+
+.THIS .pageNumber {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    line-height: 30px;
+    border-radius: 4px;
+    margin: 0 2px;
+    cursor:pointer;
+}
+
+.THIS .pagingButton {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    padding: 0;
+    cursor: pointer;
+}
+.THIS .pagingButton.narrowLetter {
+    letter-spacing: -1em;
+}
+
+.THIS .pageNumber:hover,
+.THIS .pageNumber.currentPage {
+    border-color: #0070d2;
+    color: #0070d2;
+}
+
+@media (max-width: 64em) {
+    .THIS {
+        display: block;
+        height: 32px;
+    }
+    .THIS:before {
+        content: "";
+        display: table;
+        width: 100%;
+    }
+    .THIS:after {
+        content: "";
+        clear: both;
+    }
+    .THIS .centered {
+        display: none;
+    }
+    .THIS .left {
+        float: left;
+    }
+    .THIS .right {
+        float: right;
+    }
+}

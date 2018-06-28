@@ -1,0 +1,56 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_PaginatorNumber
+  * Description : Lightning Pagination component With Number Block
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component description="LT_PaginatorNumber">
+    <!--
+    == 기본 Attribute
+    -->
+    <aura:attribute name="pageNumber" type="Integer" required="true" description="페이지번호"/>
+    <aura:attribute name="totalPage" type="integer" required="true" description="전체페이지"/>
+    <aura:attribute name="totalCount" type="Integer" required="true" description="전체건수"/>
+    <aura:attribute name="pagingBlock" type="List" default="[]" required="true" description="페이징넘버블럭"/>
+    <aura:attribute name="pagingBlockSize" type="Integer" required="true" default="10" description="페이징넘버블럭사이즈"/>
+
+    <!--
+    == 페이징 거래 이벤트 등록
+    -->
+    <aura:registerEvent name="pagingTransEvt" type="c:LT_CommonEvt"/>
+
+    <div class="container">
+        <div class="left">
+            <aura:if isTrue="{!v.pageNumber > 1}">
+                <lightning:button variant="neutral" label="&lt;&lt;" class="pagingButton narrowLetter" onclick="{!c.doFirstPage}" />
+                <lightning:button variant="neutral" label="&lt;" class="pagingButton" onclick="{!c.doPreviousPage}" />
+            </aura:if>
+        </div>
+        <div class="centered">
+            <aura:if isTrue="{! !empty(v.pagingBlock)}">
+                <aura:iteration items="{! v.pagingBlock}" var="row" start="0" indexVar="idx">
+                    <span>
+                        <aura:if isTrue="{! ((idx+1) == v.pagingBlockSize) || (row == v.totalPage)}">
+                        <ui:outputText value="{!row}" class="{!v.pageNumber == row ? 'pageNumber currentPage' : 'pageNumber'}" click="{!c.doSelectPage}"/>
+                            <aura:set attribute="else">
+                                <ui:outputText value="{!row}" class="{!v.pageNumber == row ? 'pageNumber currentPage' : 'pageNumber'}" click="{!c.doSelectPage}"/>
+                            </aura:set>
+                        </aura:if>
+                    </span>
+                </aura:iteration>
+            </aura:if>
+        </div>
+        <div class="right">
+            <aura:if isTrue="{! v.totalPage > v.pageNumber }">
+                <lightning:button variant="neutral" label="&gt;" class="pagingButton" onclick="{!c.doNextPage}" />
+                <lightning:button variant="neutral" label="&gt;&gt;" class="pagingButton narrowLetter" onclick="{!c.doLastPage}" />
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

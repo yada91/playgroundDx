@@ -1,0 +1,39 @@
+<!--
+ - Created by i2max on 2017-09-19.
+ -->
+
+<aura:component extends="c:LT_CommonBase"
+                controller="LT_CommonPickList"
+                description="LT_CommonMultiPickList">
+
+    <aura:attribute name="name" type="String" default="Select"/>
+    <aura:attribute name="label" type="String" default="Select an option"/>
+    <aura:attribute name="pickList" type="String[]"/>
+    <aura:attribute name="sobjectPickListField" type="Object"/>
+    <aura:attribute name="objectAPIName" type="String"/>
+    <aura:attribute name="fieldAPIName" type="String"/>
+    <aura:attribute name="change" type="Aura.Action"  />
+    <aura:attribute name="required" type="Boolean"  default="false"/>
+    <aura:attribute name="selectedValue" type="String" default="none"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!-- 1안 -->
+
+    <ui:inputSelect aura:id="multi" label="{!v.label}" change="{!c.onSelectChange}" multiple="true" required="{!v.required}" />
+
+    <!-- 2안 -->
+    <!-- Lightning:select는 현재 multi 지원하지 않음 -->
+    <!--
+    <div class="slds-form-element">
+        <label class="slds-form-element__label" for="select-01">Select Label</label>
+        <div class="slds-form-element__control">
+            <select aura:id="multi" class="slds-select" multiple="true" size="3" onchange="{!c.onSelectChange}">
+                <aura:iteration items="{!v.pickList}" var="pick">
+                    <option value="{!pick.value}" text="{!pick.label}" ></option>
+                </aura:iteration>
+            </select>
+        </div>
+    </div>
+    -->
+</aura:component>

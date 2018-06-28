@@ -1,0 +1,16 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_PageChangeEvt
+  * Description : 공통 Component Page Change Event
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:event type="COMPONENT" description="LT_PageChangeEvt">
+    <aura:attribute name="direction" type="String"/>
+</aura:event>

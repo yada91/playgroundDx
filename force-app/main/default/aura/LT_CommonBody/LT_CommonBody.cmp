@@ -1,0 +1,63 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonBody
+  * Description : 공통 커스텀 바디
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 10. 12  i2max        Create
+  * ===============================================================
+-->
+
+<aura:component description="LT_CommonBody">
+    <aura:attribute name="icon" type="Aura.Component[]"/>
+    <aura:attribute name="title" type="string"/>
+    <aura:attribute name="description" type="string"/>
+    <aura:attribute name="header_module" type="Aura.Component[]"/>
+    <aura:attribute name="module" type="Aura.Component[]"/>
+    <aura:attribute name="content" type="Aura.Component[]" required="true"/>
+
+    <!-- ==============================================================
+	* Body 영역
+	================================================================ -->
+    <div class="slds-page-body">
+        <aura:if isTrue="{! !empty(v.title)}">
+            <div class="slds-body-header">
+                <div class="slds-grid slds-wrap slds-page-header">
+                    <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_6-of-12 slds-large-size_8-of-12 slds-media">
+                        <div class="slds-media__figure">
+                            <aura:if isTrue="{! !empty(v.icon)}">{!v.icon}</aura:if>
+                        </div>
+                        <div class="slds-media__body">
+                            <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="{!v.title}">{!v.title}</h1>
+                            <aura:if isTrue="{! !empty(v.description)}">
+                                <p class="slds-text-body_small slds-line-height_reset">{!v.description}</p>
+                            </aura:if>
+                        </div>
+                    </div><!-- .slds-media -->
+
+                    <aura:if isTrue="{! !empty(v.header_module)}">
+                        <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-2 slds-large-size_4-of-12 slds-media-module">
+                                {!v.header_module}
+                        </div>
+                    </aura:if>
+                </div><!-- .slds-page-header -->
+            </div><!-- .slds-body-header -->
+        </aura:if>
+		
+		<aura:if isTrue="{! !empty(v.content)}">
+	        <div class="slds-grid slds-wrap slds-body-content">
+				{!v.content}
+	        </div>
+        </aura:if>
+        
+
+        <aura:if isTrue="{! !empty(v.module)}">
+            <div class="slds-body-footer">
+                    {!v.module}
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

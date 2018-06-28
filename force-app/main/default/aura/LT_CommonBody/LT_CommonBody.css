@@ -1,0 +1,67 @@
+/**
+ * Created by i2max on 2017-10-12.
+ */
+.THIS {
+    border-radius: .25rem;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.10);
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.THIS:before,
+.THIS:after {
+    content: "";
+    display: table;
+}
+
+.THIS:after {
+    clear: both;
+}
+
+.THIS .slds-body-header .slds-page-header {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.THIS .slds-body-header .slds-page-header .slds-media {
+    display: table;
+}
+
+.THIS .slds-body-header .slds-page-header .slds-media .slds-media__figure,
+.THIS .slds-body-header .slds-page-header .slds-media .slds-media__body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.THIS .slds-body-header .slds-page-header .slds-media .slds-media__body {
+	padding-left: 10px;
+}
+
+.THIS .slds-body-header .slds-page-header .slds-media .slds-media__figure {
+    width: 42px;
+}
+
+.THIS .slds-body-header .slds-page-header .slds-text-body_small {
+    margin-top: 3px;
+}
+
+.THIS .slds-media-module {
+    text-align: right;
+}
+
+.THIS .slds-media,
+.THIS .slds-media-module {
+    margin: 5px 0;
+}
+
+.THIS .slds-body-content,
+.THIS .slds-body-footer {
+    padding: 1rem;
+}
+
+.THIS .slds-body-footer {
+    border-top: 1px solid #ddd;
+    text-align: right;
+}

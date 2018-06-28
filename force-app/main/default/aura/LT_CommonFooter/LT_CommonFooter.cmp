@@ -1,0 +1,43 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonFooter
+  * Description : 공통 커스텀 푸터
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 10. 12  i2max        Create
+  * ===============================================================
+-->
+
+<aura:component description="LT_CommonFooter">
+    <aura:attribute name="moduleL" type="Aura.Component[]"/>
+    <aura:attribute name="moduleR" type="Aura.Component[]"/>
+    <aura:attribute name="description" type="string"/>
+
+    <!-- ==============================================================
+	* Footer 영역
+	================================================================ -->
+    <div class="slds-page-footer">
+        <div class="slds-grid slds-wrap slds-page-footer-inner">
+            <aura:if isTrue="{! !empty(v.moduleL)}">
+                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-3 slds-media-module-l">
+                        {!v.moduleL}
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{! !empty(v.description)}">
+                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-3 slds-footer-content">
+                        {!v.description}
+                </div>
+            </aura:if>
+
+            <aura:if isTrue="{! !empty(v.moduleR)}">
+                <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-3 slds-media-module-r">
+                        {!v.moduleR}
+                </div>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,28 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonGlobalIntf.intf
+  * Description : FrameWork 공통 Interface
+				: org 전체에 영향을 미치는 속성 설정
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:interface description="공통 org별 세팅 interface">
+    <!-- ==============================================================
+	* org별로 전체적으로 영향을 미치는 속성 정의
+	================================================================ -->
+    <aura:attribute name="g_isLogging" type="Boolean" default="true" description="org에 맞게 logging writting 여부"/>
+    <!-- ==============================================================
+	* slds-class를 convert 할지의 여부
+	* 기존에는 renderer에서 기본적으로 convert 하였지만 향후 slds를 Wrapping
+	* 하는 component가 존재하여 default를 false 처리하여 개발을 진행할것
+	* 기존에 개발된 소스가 존재하기 때문에 true를 기본으로 설정
+	================================================================ -->
+    <aura:attribute name="isSetSldsClass" type="Boolean" default="false" description="slds-class 를 사용할지 여부"/>
+
+</aura:interface>

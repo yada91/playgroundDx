@@ -1,0 +1,27 @@
+<!--
+ - Created by ms on 2017-09-26.
+ -->
+<aura:component extends="c:LT_CommonBase"
+				description="LT_CommonAlert">
+    <aura:attribute name="content" type="String" required="true" access="global" description="Alert 내용" />
+    <aura:attribute name="header" type="String" default="Alert" access="global" description="Alert 헤더"/>
+    <aura:attribute name="button" type="String" default="Okay" access="global" description="Alert Button 명"/>
+    <aura:attribute name="action" type="Aura.Action" access="global" description="Alert 확인후 Action"/>
+
+    <div aura:id="modalContainer">
+        <section role="alertdialog" tabindex="-1" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
+            <div class="{!v.IsDesktop == true ? 'slds-modal__container' : 'mobile'}">
+                <header class="slds-modal__header slds-theme_error slds-theme_alert-texture">
+                    <h2 class="slds-text-heading_medium" id="prompt-heading-id">{!v.header}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <p>{!v.content}</p>
+                </div>
+                <footer class="slds-modal__footer slds-theme_default">
+                    <lightning:button name="alertButton" label="{!v.button}" aura:id="alertButton" onclick="{!c.doClose}"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </div>
+</aura:component>

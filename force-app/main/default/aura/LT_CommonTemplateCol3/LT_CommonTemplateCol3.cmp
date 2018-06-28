@@ -1,0 +1,44 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonTemplateCol2
+  * Description : 공통 일반 컴포넌트 페이지 Template : 3분할
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================ww
+-->
+<aura:component description="LT_CommonTemplateCol3">
+    <aura:attribute name="header" type="Aura.Component[]" />
+    <aura:attribute name="sidebarLeft" type="Aura.Component[]" required="true"/>
+    <aura:attribute name="sidebarRight" type="Aura.Component[]" required="true"/>
+    <aura:attribute name="content" type="Aura.Component[]" required="true"/>
+    <aura:attribute name="footer" type="Aura.Component[]" />
+
+    <div class="slds-custom-layout-container">
+        <!-- ==============================================================
+        * header 영역
+        ================================================================ -->
+        {!v.header}
+        <!-- ==============================================================
+        * content 영역
+        ================================================================ -->
+        <div class="slds-grid slds-wrap slds-page-body-container">
+            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_3-of-12 slds-page-body-sidebar">
+                {!v.sidebarLeft}
+            </div>
+            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_6-of-12 slds-page-body-content">
+                {!v.content}
+            </div>
+            <div class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_3-of-12 slds-page-body-sidebar right">
+                {!v.sidebarRight}
+            </div>
+        </div>
+        <!-- ==============================================================
+        * footer 영역
+        ================================================================ -->
+        {!v.footer}
+    </div>
+</aura:component>

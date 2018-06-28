@@ -1,0 +1,10 @@
+<aura:documentation>
+    <aura:description>
+        <code>LT_CommonBase</code><br/>
+        FrameWork 공통 컴포넌트 <br/>
+        기본적인 공통 수행을 처리하고 업무별로는 공통 컴포넌트를 extends하여 사용
+    </aura:description>
+    <aura:example name="ExampleName" ref="exampleComponentName" label="Label">
+        <pre><code>&lt;aura:component extends="c:LT_CommonBase" description="LT_CommonConfirm"&gt;</code></pre>
+    </aura:example>
+</aura:documentation>

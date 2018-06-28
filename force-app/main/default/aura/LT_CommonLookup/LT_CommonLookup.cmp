@@ -1,0 +1,97 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonLookup.cmp
+  * Description : Lightning:input 기반의 lookup 컴포넌트
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2017. 08. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component extends="c:LT_CommonBase"
+                controller="LT_CommonLookupController"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                description="LT_CommonLookup"
+                access="global">
+
+    <aura:attribute name="selectedRecord" type="sObject" default="{}" description="Use,for store SELECTED sObject Record"/>
+    <aura:attribute name="listOfSearchRecords" type="List" description="Use,for store the list of search records which returns from apex class"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="objectAPIName" type="string" default=""/>
+    <aura:attribute name="IconName" type="string" default=""/>
+    <aura:attribute name="label" type="string" default=""/>
+    <aura:attribute name="Message" type="String" default=""/>
+    <!--바인딩이 되어야 할 필드 :: 객체로 넘어와야 한다-->
+    <aura:attribute name="sobjectLookupField" type="Object"/>
+    <!-- Query 필터 조건 -->
+    <aura:attribute name="condition" type="string"/>
+    <aura:attribute name="limitSize" type="string"/>
+
+    <aura:attribute name="selectAction" type="Aura.Action" access="global" description="항목 선택시 수행될 액션"/>
+    <aura:attribute name="unselectAction" type="Aura.Action" access="global" description="항목 선택해제시 수행될 액션"/>
+
+    <!--declare events hendlers-->
+    <aura:handler name="oSelectedRecordEvent" event="c:LT_CommonEvt" action="{!c.handleComponentEvent}"/>
+    <aura:handler name="change" value="{!v.selectedRecord}" action="{!c.onSetRecord}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+
+    <c:LT_CommonTemplate >
+        <aura:set attribute="content">
+            <!-- ==============================================================
+			* 컴포넌트 content 영역[시작]
+			================================================================ -->
+
+            <div aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close" data-select="single">
+                <!-- Label -->
+                <label class="slds-form-element__label" for="lookup-348">{!v.label}</label>
+                <!--Lookup Field -->
+                <div class="slds-form-element__control">
+                    <div class="slds-input-has-icon slds-input-has-icon--right">
+                        <!-- 돋보기 아이콘 -->
+                        <lightning:icon class="slds-input__icon slds-show" iconName="utility:search" size="x-small" alternativeText="search"/>
+                        <!-- 초반 가려진 부분 -->
+                        <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+							<span class="slds-pill" style="width:100%">
+								<!-- 좌측 아이콘 -->
+								<span class="slds-icon_container slds-combobox__input-entity-icon" title="record">
+									<lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default" iconName="{!v.IconName}" size="x-small" alternativeText="icon"/>
+									<span class="slds-assistive-text"></span>
+								</span>
+								<span class="slds-pill__label slds-p-left_x-large" title="{!v.selectedRecord.Name}">
+										{!v.selectedRecord.Name}
+                                </span>
+								<button class="slds-button slds-button--icon slds-pill__remove" onclick="{!c.onClear}">
+									<lightning:icon class="slds-button__icon" iconName="utility:close" size="x-small" alternativeText="search"/>
+									<span class="slds-assistive-text">Remove</span>
+								</button>
+							</span>
+                        </div>
+                        <!-- 기본 필드 -->
+                        <div aura:id="lookupField" class="slds-show">
+							<span class="slds-icon_container slds-combobox__input-entity-icon" title="record">
+								<lightning:icon class="slds-icon slds-icon slds-icon_small slds-icon-text-default" iconName="{!v.IconName}" size="x-small" alternativeText="icon"/>
+								<span class="slds-assistive-text"></span>
+							</span>
+                            <ui:inputText click="{!c.onFocus}" updateOn="keyup" keyup="{!c.onKeyPress}" class="slds-lookup__search-input slds-input leftPaddingClass" value="{!v.SearchKeyWord}" placeholder="search.."/>
+                        </div>
+                    </div>
+                </div>
+                <!-- Lookup List -->
+                <ul class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+                    <!--<center> <ui:spinner aura:id="spinner"/> </center>-->
+                    <center> {!v.Message}</center>
+                    <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">
+                        <c:LT_CommonLookupResult oRecord="{!singleRec}" IconName="{!v.IconName}"/>
+                    </aura:iteration>
+                </ul>
+            </div>
+
+            <!-- ==============================================================
+            * 컴포넌트 content 영역[종료]
+            ================================================================ -->
+        </aura:set>
+    </c:LT_CommonTemplate>
+</aura:component>

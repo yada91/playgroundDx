@@ -1,0 +1,39 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonModalButton.cmp
+  * Description : 공통 모달 팝업 버튼
+				: 모달상으로 컴포넌트 display
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component extends="c:LT_CommonBase" description="LT_CommonModalButton">
+    <!-- ==============================================================
+	* Button Lable
+	================================================================ -->
+    <aura:attribute name="buttonName" type="String" required="true"/>
+    <!-- ==============================================================
+	* modal component name
+	================================================================ -->
+    <aura:attribute name="compName" type="String" required="true"/>
+    <!-- ==============================================================
+	* modal component attribute
+	================================================================ -->
+    <aura:attribute name="compAttributes" type="Map" default="{}"/>
+    <!-- ==============================================================
+	* modalContent main area
+	================================================================ -->
+    <aura:attribute name="modalContent" type="Aura.Component[]" />
+
+    <!--create component dynamically on button click-->
+    <lightning:button name="modalButton" label="{!v.buttonName}" onclick="{!c.onCreateComponent}" />
+
+    <div aura:id="cmpBody">
+            {!v.modalContent}
+    </div>
+</aura:component>

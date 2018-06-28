@@ -1,0 +1,62 @@
+/**
+ * Created by i2max on 2017-10-12.
+ */
+.THIS {
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.THIS:before,
+.THIS:after {
+    content: "";
+    display: table;
+}
+
+.THIS:after {
+    clear: both;
+}
+
+
+.THIS .slds-media {
+    float: left;
+    display: table;
+}
+
+.THIS .slds-media .slds-media__figure,
+.THIS .slds-media .slds-media__body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.THIS .slds-media .slds-media__figure {
+    width: 45px;
+}
+
+.THIS .slds-media .slds-media__figure .slds-icon_container {
+    margin-right: 10px;
+}
+
+.THIS .slds-text-body_small {
+    margin-top: 3px;
+}
+
+.THIS .slds-media-module {
+    text-align: right;
+}
+
+.THIS .slds-media,
+.THIS .slds-media-module {
+    margin: 5px 0;
+}
+
+/* 커스텀 바디내에 글로벌 헤더 추가시 스타일*/
+.THIS.inner {
+	border: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+.THIS.inner .slds-p-horizontal_small {
+	padding: 0;
+}

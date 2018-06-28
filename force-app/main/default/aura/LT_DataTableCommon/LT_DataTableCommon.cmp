@@ -1,0 +1,17 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_DataTableCommon
+  * Description : Lightning DataTable component with FieldSet
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2018. 05. 18  Donghu        Create
+  * ===============================================================
+-->
+<aura:component extensible="true" extends="c:LT_CommonBase" implements="c:LT_DataTableCommonInf" access="public"
+>
+    <aura:handler event="aura:locationChange" action="{!c.handleLocation}"/>
+        {!v.body}
+</aura:component>

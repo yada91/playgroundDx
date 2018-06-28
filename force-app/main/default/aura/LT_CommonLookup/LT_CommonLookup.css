@@ -1,0 +1,19 @@
+/**
+ * Created by ms on 2017-09-12.
+ */
+.THIS .leftPaddingClass {
+    padding-left: 2rem;
+}
+.THIS .slds-listbox .slds-listbox__item .slds-media {	
+	width: 100%;
+	text-align: left;
+	margin: 0;
+}
+
+.THIS .slds-listbox .slds-listbox__item .slds-media .slds-media__figure {
+	width: 34px;
+}
+
+.THIS .slds-listbox .slds-listbox__item .slds-media .slds-media__figure .slds-icon_container {
+	margin-right: 10px;
+}

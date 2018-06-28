@@ -1,0 +1,26 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonForceInput
+  * Description : <force:input> 사용시 최상위 위치를 위한 세팅
+				: 생성후 지움으로써 이후 <div>안의 <force:input> 적용이 가능
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component description="LT_CommonForceInput">
+    <!-- ==============================================================
+	* init 수행을 하여 최상위에 위치한 force:input을 포함한 자신의 컴포넌트를 destroy 함
+	================================================================ -->
+    <aura:handler value="{!this}" name="init" action="{!c.doInit}"/>
+	<aura:attribute name="record" type="SObject" default="{sobjectType: 'Account'}"/>
+    <!-- ==============================================================
+	* 다른 tag 로 감싸면 안된다 : 반드시 최상위에 위치하여야 한다.[매우 중요]
+	* div로 감싸지 말것.
+	================================================================ -->
+	<force:inputField aura:id="accountLookup" value="{!v.record.Name}"/>
+</aura:component>

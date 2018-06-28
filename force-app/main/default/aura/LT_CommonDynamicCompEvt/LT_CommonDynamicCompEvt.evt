@@ -1,0 +1,16 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonDynamicCompEvt.evt
+  * Description : 공통 모달 팝업 이벤트
+  * Copyright   : Copyright © 1995-2016 SAMSUNG All Rights Reserved
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:event type="COMPONENT" description="LT_CommonDynamicCompEvt">
+    <aura:attribute name="comp" type="Aura.Component"/>
+</aura:event>

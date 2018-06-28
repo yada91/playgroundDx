@@ -1,0 +1,63 @@
+<!--
+  * ===============================================================
+  * File Name   : LT_CommonBase.cmp
+  * Description : FrameWork 공통 컴포넌트
+				: 기본적인 공통 수행을 처리하고 업무별로는 공통 컴포넌트를
+				: extends하여 사용
+  * Author      : i2max
+  * Modification Log
+  * ===============================================================
+  * Ver  Date          Author         Modification
+  * ===============================================================
+  * 1.0  2016. 07. 01  i2max        Create
+  * ===============================================================
+-->
+<aura:component extensible="true" implements="c:LT_CommonIntf" controller="LT_CommonBaseController">
+	<!--<c:LT_CommonBaseResource />-->
+	<!-- ==============================================================
+	* 초기 이벤트 거래
+	================================================================ -->
+	<aura:handler name="init" value="{!this}" action="{!c.doCommonInit}"/>
+	<!-- ==============================================================
+	* 공통 Device : DESCKTOP 과 그외로 구분
+	* DESKTOP 과 그외(PHONE, TABLET)로 구분하여 화면 개발
+	* formFactor : DESKTOP, PHONE, TABLE
+	* isAndroid
+	* isIOS
+	* isIPad
+	* isIPhone
+	* isPhone
+	* isTablet
+	* isWindowsPhone
+	================================================================ -->
+	<aura:attribute name="IsDesktop" type="Boolean" default="{!$Browser.formFactor == 'DESKTOP'}"/>
+	<!-- ==============================================================
+	* 공통 spinner : lightning spinner
+	================================================================ -->
+	<aura:attribute name="IsShowSpinner" type="Boolean" default="false"/>
+	<aura:if isTrue="{!v.IsShowSpinner}">
+        <aura:if isTrue="{!v.IsDesktop}">
+            <div class="slds-spinner_container">
+                <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+            <aura:set attribute="else">
+                <!--TODO: mobile spinner -->
+                <div class="slds-spinner_container">
+                    <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="status">
+                        <span class="slds-assistive-text">Loading</span>
+                        <div class="slds-spinner__dot-a"></div>
+                        <div class="slds-spinner__dot-b"></div>
+                    </div>
+                </div>
+            </aura:set>
+		</aura:if>
+	</aura:if>
+	<!-- ==============================================================
+	* body 영역
+	================================================================ -->
+	{!v.body}
+</aura:component>
