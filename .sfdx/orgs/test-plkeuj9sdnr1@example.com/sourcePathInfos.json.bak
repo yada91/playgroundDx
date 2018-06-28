@@ -1,0 +1,122 @@
+[
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160594821,
+            "changeTime": 1530160594821,
+            "contentHash": "b28b7af69320201d1cf206ebf28373980add1451",
+            "isWorkspace": false,
+            "isArtifactRoot": true
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160594822,
+            "changeTime": 1530160594822,
+            "contentHash": "7505d64a54e061b7acd54ccd58b49dc43500b635",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160911847,
+            "changeTime": 1530160911847,
+            "contentHash": "78dd78c06e81fd7afb457ecdb5af8fae5546e0a3",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\aura",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\aura",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160594823,
+            "changeTime": 1530160594823,
+            "contentHash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160912733,
+            "changeTime": 1530160912733,
+            "contentHash": "76e289d2d4d831eba496e8b44dc7ba02f2756b15",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes\\DemoController.cls",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes\\DemoController.cls",
+            "isDirectory": false,
+            "isMetadataFile": false,
+            "size": 95,
+            "modifiedTime": 1530160912563,
+            "changeTime": 1530160912578,
+            "contentHash": "b50a35a349321f416be9db667d5f474fc0201e92",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes\\DemoController.cls-meta.xml",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx\\force-app\\main\\default\\classes\\DemoController.cls-meta.xml",
+            "isDirectory": false,
+            "isMetadataFile": true,
+            "size": 179,
+            "modifiedTime": 1530160912693,
+            "changeTime": 1530160912732,
+            "contentHash": "5dba4d8d1d7ec0e924d941c2ab6e8f8963f526c1",
+            "isWorkspace": false,
+            "isArtifactRoot": false
+        }
+    ],
+    [
+        "C:\\Users\\i2max\\IdeaProjects\\playgroundDx",
+        {
+            "state": "u",
+            "sourcePath": "C:\\Users\\i2max\\IdeaProjects\\playgroundDx",
+            "isDirectory": true,
+            "isMetadataFile": false,
+            "size": 0,
+            "modifiedTime": 1530160703648,
+            "changeTime": 1530160703648,
+            "contentHash": "48f23ba46169c4992480349386e662f8db0435d8",
+            "isWorkspace": true,
+            "isArtifactRoot": false
+        }
+    ]
+]

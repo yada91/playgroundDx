@@ -1,7 +1,12 @@
 {
-    "orgName": "Demo Company",
+    "country": "US",
     "edition": "Developer",
-    "orgPreferences" : {
-        "enabled": ["S1DesktopEnabled"]
-    }
+    "orgPreferences": {
+        "enabled": [
+            "S1DesktopEnabled"
+        ],
+        "disabled": []
+    },
+    "orgName": "playgroundDx",
+    "adminEmail": "donghu91@brave-raccoon-192720.com"
 }
